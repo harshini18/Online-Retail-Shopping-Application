@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import {
     LayoutDashboard, Package, BarChart3, Settings, LogOut,
-    Plus, Edit, Trash2, Check, X, Bell, Users
+    Plus, Edit, Trash2, Check, X, Bell, Users,
+    TrendingUp, IndianRupee, AlertCircle, ArrowRight, Activity
 } from 'lucide-react';
 import { productAPI, categoryAPI, inventoryAPI, orderAPI, notificationAPI } from '../services/api';
 
@@ -167,7 +168,7 @@ const AdminDashboard = () => {
     return (
         <div className="min-h-screen flex">
             {/* Sidebar */}
-            <div className="w-64 bg-white shadow-xl p-6">
+            <div className="w-64 bg-white shadow-xl p-6 flex flex-col h-screen sticky top-0">
                 <div className="flex items-center gap-3 mb-8">
                     <div className="bg-gradient-primary p-2 rounded-xl">
                         <Package className="w-6 h-6 text-white" />
@@ -204,7 +205,7 @@ const AdminDashboard = () => {
 
                 <button
                     onClick={handleLogout}
-                    className="w-full flex items-center gap-3 px-4 py-3 mt-auto text-red-600 hover:bg-red-50 rounded-xl transition-all absolute bottom-6"
+                    className="flex items-center gap-3 px-4 py-3 mt-auto text-red-600 hover:bg-red-50 rounded-xl transition-all"
                 >
                     <LogOut className="w-5 h-5" />
                     <span>Logout</span>
@@ -215,7 +216,7 @@ const AdminDashboard = () => {
             <div className="flex-1 p-8">
                 <div className="flex justify-between items-center mb-8">
                     <h2 className="text-3xl font-bold text-gray-800">
-                        {activeTab === 'dashboard' && 'Dashboard (v1.2)'}
+                        {activeTab === 'dashboard' && 'Dashboard'}
                         {activeTab === 'products' && 'Product Management'}
                         {activeTab === 'orders' && 'Order Management'}
                     </h2>
@@ -232,18 +233,152 @@ const AdminDashboard = () => {
 
                 {/* Dashboard Tab */}
                 {activeTab === 'dashboard' && (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="card bg-gradient-to-br from-purple-500 to-purple-700 text-white">
-                            <h3 className="text-lg mb-2">Total Products</h3>
-                            <p className="text-4xl font-bold">{products.length}</p>
+                    <div className="space-y-8">
+                        {/* Stats Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div className="card bg-gradient-to-br from-indigo-500 to-indigo-700 text-white p-6 relative overflow-hidden group">
+                                <div className="absolute -right-4 -top-4 opacity-10 group-hover:scale-110 transition-transform">
+                                    <IndianRupee className="w-24 h-24" />
+                                </div>
+                                <div className="relative z-10">
+                                    <p className="text-indigo-100 text-sm font-medium mb-1">Total Revenue</p>
+                                    <h3 className="text-3xl font-bold">₹{Math.round(orders.reduce((sum, o) => sum + o.totalAmount, 0))}</h3>
+                                    <div className="mt-4 flex items-center text-xs text-indigo-100 bg-white/10 w-fit px-2 py-1 rounded">
+                                        <TrendingUp className="w-3 h-3 mr-1" />
+                                        <span>+12.5% vs last month</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="card bg-gradient-to-br from-purple-500 to-purple-700 text-white p-6 relative overflow-hidden group">
+                                <div className="absolute -right-4 -top-4 opacity-10 group-hover:scale-110 transition-transform">
+                                    <Package className="w-24 h-24" />
+                                </div>
+                                <div className="relative z-10">
+                                    <p className="text-purple-100 text-sm font-medium mb-1">Total Products</p>
+                                    <h3 className="text-3xl font-bold">{products.length}</h3>
+                                    <button onClick={() => setActiveTab('products')} className="mt-4 text-xs bg-white text-purple-700 font-bold px-3 py-1 rounded-lg flex items-center gap-1 hover:bg-purple-50">
+                                        Manage <ArrowRight className="w-3 h-3" />
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div className="card bg-gradient-to-br from-pink-500 to-pink-700 text-white p-6 relative overflow-hidden group">
+                                <div className="absolute -right-4 -top-4 opacity-10 group-hover:scale-110 transition-transform">
+                                    <BarChart3 className="w-24 h-24" />
+                                </div>
+                                <div className="relative z-10">
+                                    <p className="text-pink-100 text-sm font-medium mb-1">Total Orders</p>
+                                    <h3 className="text-3xl font-bold">{orders.length}</h3>
+                                    <button onClick={() => setActiveTab('orders')} className="mt-4 text-xs bg-white text-pink-700 font-bold px-3 py-1 rounded-lg flex items-center gap-1 hover:bg-pink-50">
+                                        View All <ArrowRight className="w-3 h-3" />
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div className="card bg-gradient-to-br from-amber-500 to-amber-700 text-white p-6 relative overflow-hidden group">
+                                <div className="absolute -right-4 -top-4 opacity-10 group-hover:scale-110 transition-transform">
+                                    <AlertCircle className="w-24 h-24" />
+                                </div>
+                                <div className="relative z-10">
+                                    <p className="text-amber-100 text-sm font-medium mb-1">Pending Approvals</p>
+                                    <h3 className="text-3xl font-bold">{orders.filter(o => o.status === 'PENDING' || o.status === 'CONFIRMED').length}</h3>
+                                    <div className="mt-4 flex items-center text-xs bg-white/20 px-2 py-1 rounded animate-pulse">
+                                        <span>Action Required</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="card bg-gradient-to-br from-pink-500 to-pink-700 text-white">
-                            <h3 className="text-lg mb-2">Total Orders</h3>
-                            <p className="text-4xl font-bold">{orders.length}</p>
-                        </div>
-                        <div className="card bg-gradient-to-br from-cyan-500 to-cyan-700 text-white">
-                            <h3 className="text-lg mb-2">Pending Approvals</h3>
-                            <p className="text-4xl font-bold">{orders.filter(o => o.status === 'PENDING' || o.status === 'CONFIRMED').length}</p>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            {/* Recent Orders Section */}
+                            <div className="lg:col-span-2 card bg-white shadow-sm border border-gray-100">
+                                <div className="flex justify-between items-center mb-6">
+                                    <h3 className="text-lg font-bold flex items-center gap-2">
+                                        <Activity className="w-5 h-5 text-indigo-600" />
+                                        Recent Activity
+                                    </h3>
+                                    <button onClick={() => setActiveTab('orders')} className="text-sm text-indigo-600 font-semibold hover:underline">
+                                        See all
+                                    </button>
+                                </div>
+                                <div className="space-y-4">
+                                    {orders.slice(0, 5).map(order => (
+                                        <div key={order.id} className="flex items-center justify-between p-3 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200">
+                                            <div className="flex items-center gap-4">
+                                                <div className="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold text-xs">
+                                                    #{order.id}
+                                                </div>
+                                                <div>
+                                                    <p className="font-semibold text-gray-800">Order from User {order.userId}</p>
+                                                    <p className="text-xs text-gray-500">{new Date(order.createdAt).toLocaleDateString()}</p>
+                                                </div>
+                                            </div>
+                                            <div className="text-right">
+                                                <p className="font-bold text-gray-900">₹{order.totalAmount}</p>
+                                                <span className={`text-[10px] font-bold uppercase px-2 py-0.5 rounded ${order.status === 'APPROVED' ? 'bg-green-100 text-green-700' :
+                                                    order.status === 'DELIVERED' ? 'bg-blue-100 text-blue-700' :
+                                                        'bg-yellow-100 text-yellow-700'
+                                                    }`}>
+                                                    {order.status}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                    {orders.length === 0 && (
+                                        <div className="text-center py-8 text-gray-500">
+                                            No recent orders found.
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+
+                            {/* Quick Actions & Low Stock */}
+                            <div className="space-y-6">
+                                <div className="card bg-white shadow-sm border border-gray-100">
+                                    <h3 className="text-lg font-bold mb-4">Quick Actions</h3>
+                                    <div className="grid grid-cols-1 gap-3">
+                                        <button
+                                            onClick={() => { setActiveTab('products'); setShowProductModal(true); }}
+                                            className="flex items-center gap-3 p-3 rounded-xl bg-indigo-50 text-indigo-700 hover:bg-indigo-100 transition-all font-medium"
+                                        >
+                                            <Plus className="w-5 h-5" />
+                                            Add New Product
+                                        </button>
+                                        <button
+                                            onClick={() => setActiveTab('orders')}
+                                            className="flex items-center gap-3 p-3 rounded-xl bg-pink-50 text-pink-700 hover:bg-pink-100 transition-all font-medium"
+                                        >
+                                            <Check className="w-5 h-5" />
+                                            Approve Orders
+                                        </button>
+                                        <button
+                                            className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 text-gray-700 hover:bg-gray-100 transition-all font-medium"
+                                        >
+                                            <Settings className="w-5 h-5" />
+                                            System Settings
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div className="card bg-white shadow-sm border border-gray-100">
+                                    <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+                                        <AlertCircle className="w-5 h-5 text-amber-500" />
+                                        Low Stock Alert
+                                    </h3>
+                                    <div className="space-y-3">
+                                        {products.filter(p => p.quantity < 5).slice(0, 3).map(product => (
+                                            <div key={product.id} className="flex justify-between items-center text-sm p-2 bg-amber-50 rounded-lg">
+                                                <span className="font-medium text-gray-800 line-clamp-1">{product.name}</span>
+                                                <span className="text-red-600 font-bold whitespace-nowrap">{product.quantity} left</span>
+                                            </div>
+                                        ))}
+                                        {products.filter(p => p.quantity < 5).length === 0 && (
+                                            <p className="text-sm text-gray-500 text-center py-2">Stock levels are healthy.</p>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 )}
