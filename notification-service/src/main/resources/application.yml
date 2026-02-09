@@ -1,0 +1,16 @@
+server:
+  port: 8087
+spring:
+  application:
+    name: notification-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/retail_notification_db?createDatabaseIfNotExist=true&useSSL=false
+    username: root
+    password: Deepika@18
+  jpa:
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

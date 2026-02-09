@@ -1,0 +1,392 @@
+[
+  {
+    "category": "Electronics",
+    "products": [
+      {
+        "name": "iPhone 15 Pro Max",
+        "description": "Titanium design with A17 Pro chip",
+        "price": 99599,
+        "imageUrl": "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Samsung Galaxy S24",
+        "description": "Galaxy AI 6.8\" display",
+        "price": 107899,
+        "imageUrl": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "MacBook Pro M3",
+        "description": "M3 Liquid Retina display",
+        "price": 207499,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Sony WH-1000XM5",
+        "description": "Noise cancellation",
+        "price": 33199,
+        "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "iPad Air",
+        "description": "M1 chip design",
+        "price": 49799,
+        "imageUrl": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Apple Watch 9",
+        "description": "Health companion",
+        "price": 35689,
+        "imageUrl": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Canon R6 II",
+        "description": "Pro mirrorless camera",
+        "price": 207499,
+        "imageUrl": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Switch OLED",
+        "description": "7-inch OLED",
+        "price": 29049,
+        "imageUrl": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Bose Speaker",
+        "description": "360 sound",
+        "price": 27389,
+        "imageUrl": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Samsung QLED",
+        "description": "65\" 4K TV",
+        "price": 149399,
+        "imageUrl": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=500&h=500&fit=crop"
+      }
+    ]
+  },
+  {
+    "category": "Clothing",
+    "products": [
+      {
+        "name": "Levi's 501 Jeans",
+        "description": "Iconic straight denim",
+        "price": 7469,
+        "imageUrl": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Nike Dri-FIT",
+        "description": "Training shirt",
+        "price": 2904,
+        "imageUrl": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Zara Blazer",
+        "description": "Tailored fit",
+        "price": 10789,
+        "imageUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "H&M Hoodie",
+        "description": "Cotton comfort",
+        "price": 2489,
+        "imageUrl": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Ralph Lauren Polo",
+        "description": "Classic logo",
+        "price": 7469,
+        "imageUrl": "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Adidas Pants",
+        "description": "3-stripes track",
+        "price": 5394,
+        "imageUrl": "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Uniqlo Jacket",
+        "description": "Light down",
+        "price": 6639,
+        "imageUrl": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Gap Chinos",
+        "description": "Slim fit",
+        "price": 4564,
+        "imageUrl": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Patagonia Fleece",
+        "description": "Eco friendly",
+        "price": 12449,
+        "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Tommy Shirt",
+        "description": "Oxford button",
+        "price": 5809,
+        "imageUrl": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=500&h=500&fit=crop"
+      }
+    ]
+  },
+  {
+    "category": "Footwear",
+    "products": [
+      {
+        "name": "Nike Air Max",
+        "description": "Air cushioning",
+        "price": 13279,
+        "imageUrl": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Ultraboost",
+        "description": "Boost cushion",
+        "price": 15769,
+        "imageUrl": "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Converse",
+        "description": "Chuck Taylor",
+        "price": 5477,
+        "imageUrl": "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Dr Martens",
+        "description": "1460 Boots",
+        "price": 14939,
+        "imageUrl": "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Vans",
+        "description": "Old Skool",
+        "price": 6224,
+        "imageUrl": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Timberland",
+        "description": "6-inch boots",
+        "price": 16599,
+        "imageUrl": "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "New Balance",
+        "description": "574 Classic",
+        "price": 7054,
+        "imageUrl": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Birkenstock",
+        "description": "Arizona sandals",
+        "price": 9959,
+        "imageUrl": "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Puma RS-X",
+        "description": "Retro sneakers",
+        "price": 9129,
+        "imageUrl": "https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Clarks",
+        "description": "Desert boots",
+        "price": 12034,
+        "imageUrl": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=500&fit=crop"
+      }
+    ]
+  },
+  {
+    "category": "Accessories",
+    "products": [
+      {
+        "name": "Ray-Ban",
+        "description": "Aviator sunglasses",
+        "price": 14109,
+        "imageUrl": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "MK Handbag",
+        "description": "Saffiano leather",
+        "price": 24816,
+        "imageUrl": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Fossil Watch",
+        "description": "Hybrid smartwatch",
+        "price": 16267,
+        "imageUrl": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Wallet",
+        "description": "RFID protection",
+        "price": 4149,
+        "imageUrl": "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Scarf",
+        "description": "Cashmere soft",
+        "price": 7469,
+        "imageUrl": "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Tumi Backpack",
+        "description": "Travel backpack",
+        "price": 35357,
+        "imageUrl": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Belt",
+        "description": "Italian leather",
+        "price": 4564,
+        "imageUrl": "https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Silk Ties",
+        "description": "Premium silk",
+        "price": 5477,
+        "imageUrl": "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Sunglasses",
+        "description": "Polarized sport",
+        "price": 10789,
+        "imageUrl": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Crossbody",
+        "description": "Leather bag",
+        "price": 12449,
+        "imageUrl": "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500&h=500&fit=crop"
+      }
+    ]
+  },
+  {
+    "category": "Beauty Products",
+    "products": [
+      {
+        "name": "Skincare Kit",
+        "description": "Complete routine",
+        "price": 7469,
+        "imageUrl": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Face Serum",
+        "description": "Anti-aging formula",
+        "price": 6639,
+        "imageUrl": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Eyeshadow",
+        "description": "18 shades palette",
+        "price": 4564,
+        "imageUrl": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Hair Dryer",
+        "description": "Ionic technology",
+        "price": 12449,
+        "imageUrl": "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Face Cream",
+        "description": "24h hydration SPF",
+        "price": 3734,
+        "imageUrl": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Brush Set",
+        "description": "15 brushes",
+        "price": 5809,
+        "imageUrl": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Perfume",
+        "description": "Signature scents",
+        "price": 8299,
+        "imageUrl": "https://images.unsplash.com/photo-1541643600914-78b084683601?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "LED Mask",
+        "description": "Light therapy",
+        "price": 20749,
+        "imageUrl": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Nail Kit",
+        "description": "Manicure tools",
+        "price": 3319,
+        "imageUrl": "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Hair Iron",
+        "description": "Ceramic styling",
+        "price": 9959,
+        "imageUrl": "https://images.unsplash.com/photo-1589710751893-f9a6770ad71b?w=500&h=500&fit=crop"
+      }
+    ]
+  },
+  {
+    "category": "Home Living",
+    "products": [
+      {
+        "name": "Pillows",
+        "description": "Memory foam",
+        "price": 6639,
+        "imageUrl": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Cotton Sheets",
+        "description": "800 thread",
+        "price": 12449,
+        "imageUrl": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Dinnerware",
+        "description": "16-piece set",
+        "price": 7469,
+        "imageUrl": "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Diffuser",
+        "description": "Aromatherapy LED",
+        "price": 3319,
+        "imageUrl": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Blanket",
+        "description": "Weighted 15lb",
+        "price": 7469,
+        "imageUrl": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Vacuum",
+        "description": "Robot cleaner",
+        "price": 33199,
+        "imageUrl": "https://images.unsplash.com/photo-1558317374-067fb5f30001?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Coffee Maker",
+        "description": "Deluxe brewer",
+        "price": 14939,
+        "imageUrl": "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Wall Art",
+        "description": "3-piece canvas",
+        "price": 10789,
+        "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "Cookware",
+        "description": "10-piece steel",
+        "price": 29049,
+        "imageUrl": "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=500&h=500&fit=crop"
+      },
+      {
+        "name": "LED Lights",
+        "description": "Smart RGB strips",
+        "price": 3734,
+        "imageUrl": "https://images.unsplash.com/photo-1550985616-10810253b84d?w=500&h=500&fit=crop"
+      }
+    ]
+  }
+]
