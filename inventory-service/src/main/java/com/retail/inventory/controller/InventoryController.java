@@ -29,6 +29,11 @@ public class InventoryController {
         inventoryService.reduceStock(productId, quantity);
     }
 
+    @PostMapping
+    public void createInventory(@RequestParam Long productId, @RequestParam Integer quantity) {
+        inventoryService.createInventory(productId, quantity);
+    }
+
     @GetMapping("/health")
     public String health() {
         return "Inventory Service is running";

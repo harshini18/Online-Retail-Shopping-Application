@@ -8,4 +8,6 @@ public interface InventoryService {
     Inventory updateStock(Long productId, Integer quantity);
 
     void reduceStock(Long productId, Integer quantity);
+    
+    void createInventory(Long productId, Integer quantity);
 }

@@ -4,6 +4,7 @@ import com.retail.product.entity.Product;
 import com.retail.product.entity.Category;
 import com.retail.product.repository.ProductRepository;
 import com.retail.product.repository.CategoryRepository;
+import com.retail.product.client.InventoryClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -13,11 +14,12 @@ import java.util.List;
 public class ProductService {
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
-    
+    private final InventoryClient inventoryClient;
 
-    public ProductService(ProductRepository productRepository, CategoryRepository categoryRepository) {
+    public ProductService(ProductRepository productRepository, CategoryRepository categoryRepository, InventoryClient inventoryClient) {
 		this.productRepository = productRepository;
 		this.categoryRepository = categoryRepository;
+        this.inventoryClient = inventoryClient;
 	}
 
 	public List<Product> getAllProducts() {
@@ -34,7 +36,13 @@ public class ProductService {
     }
 
     public Product createProduct(Product product) {
-        return productRepository.save(product);
+        Product savedProduct = productRepository.save(product);
+        try {
+            inventoryClient.createInventory(savedProduct.getId(), savedProduct.getQuantity());
+        } catch (Exception e) {
+            System.err.println("Failed to create inventory for product: " + e.getMessage());
+        }
+        return savedProduct;
     }
 
     public Product updateProduct(Long id, Product product) {

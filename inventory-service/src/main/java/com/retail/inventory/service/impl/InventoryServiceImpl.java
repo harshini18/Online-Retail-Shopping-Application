@@ -61,4 +61,20 @@ public class InventoryServiceImpl implements InventoryService {
             System.err.println("Failed to sync stock reduction with product-service: " + e.getMessage());
         }
     }
+
+    @Override
+    public void createInventory(Long productId, Integer quantity) {
+        // Check if inventory already exists to handle potential duplicate calls safely
+        Inventory existing = inventoryRepository.findByProductId(productId).orElse(null);
+        if (existing == null) {
+            Inventory inv = new Inventory();
+            inv.setProductId(productId);
+            inv.setQuantity(quantity);
+            inventoryRepository.save(inv);
+        } else {
+            // Optionally update quantity or ignore
+            existing.setQuantity(quantity);
+            inventoryRepository.save(existing);
+        }
+    }
 }
