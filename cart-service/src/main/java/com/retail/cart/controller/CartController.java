@@ -22,13 +22,7 @@ public class CartController {
 
     @PostMapping
     public CartItem addToCart(@RequestBody CartItem item) {
-        try {
-            return cartService.addToCart(item);
-        } catch (IllegalArgumentException e) {
-            throw new RuntimeException("Invalid cart item: " + e.getMessage());
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to add item to cart: " + e.getMessage());
-        }
+        return cartService.addToCart(item);
     }
 
     @DeleteMapping("/{userId}")
