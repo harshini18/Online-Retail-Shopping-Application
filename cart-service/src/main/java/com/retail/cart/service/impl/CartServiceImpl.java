@@ -9,6 +9,7 @@ import java.util.List;
 
 @Service
 public class CartServiceImpl implements CartService {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(CartServiceImpl.class);
 
     private final CartRepository cartRepository;
 
@@ -23,11 +24,16 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public CartItem addToCart(CartItem item) {
+        log.info("Adding item to cart: userId={}, productId={}, quantity={}", 
+                item.getUserId(), item.getProductId(), item.getQuantity());
+
         // Validate required fields
         if (item.getUserId() == null || item.getProductId() == null) {
+            log.error("Validation failed: userId and productId are required");
             throw new IllegalArgumentException("userId and productId are required");
         }
         if (item.getQuantity() == null || item.getQuantity() <= 0) {
+            log.warn("Invalid quantity provided: {}. Defaulting to 1.", item.getQuantity());
             item.setQuantity(1); // Default to 1 if not provided
         }
         

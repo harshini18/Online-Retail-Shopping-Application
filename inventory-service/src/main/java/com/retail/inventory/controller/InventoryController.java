@@ -3,6 +3,7 @@ package com.retail.inventory.controller;
 import com.retail.inventory.entity.Inventory;
 import com.retail.inventory.service.InventoryService;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/inventory")
